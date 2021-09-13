@@ -1,13 +1,13 @@
-"use strict";
+'use strict';
 
-window.addEventListener("load", Initieer);
+window.addEventListener("load", initialize);
 
 //anonieme functie
 //window.addEventListener("load", function () { alert("HTML ingeladen!"); });
 
-function Initieer() {
+function initialize() {
 
-  let button = document.getElementById("exampleButton");
+  const button = document.getElementById("example");
 
   button.addEventListener("click", function () {
     alert("Ik ben helemaal geheim!");
@@ -21,39 +21,39 @@ function Initieer() {
   // ############################################
 
   //aanroepen van een function
-  DoeIets();
+  doeIets();
 
   //meermaals aanroepen van een function
   for (let i = 0; i < 10; i++) {
-    DoeIets();
+    doeIets();
   }
 
   //argumenten doorgeven aan een functie
   for (let i = 0; i < 10; i++) {
-    DoeNogIets(`Aanroep ${i}`);
+    doeNogIets(`Aanroep ${i}`);
   }
 
-  Oppervlak(5, 3);
-  Oppervlak('test', 2);
-  Oppervlak(5);
+  oppervlak(5, 3);
+  oppervlak('test', 2);
+  oppervlak(5);
 
   // ############################################
   // functies die wel een resultaat terugkrijgen
   // ############################################
   
   //retour van een enkel resultaat
-  let getal = Trippel(3);
+  const getal = Trippel(3);
   console.log(getal);
   
-  let getal2 = Trippel("hallo!");
+  const getal2 = Trippel("hallo!");
   console.warn(getal2);
   
   //retour van meerdere resultaten (als object)
-  let berekendeoppervlakte = Oppervlak2(2, 3);
+  const berekendeoppervlakte = oppervlak2(2, 3);
   if (!berekendeoppervlakte.foutingave)
   console.log(`Berekende oppervlakte is ${berekendeoppervlakte.vlakte}`);
   else
-  console.warn('Foutief gebruik van functie Oppervlak(h,b)');
+  console.warn('Foutief gebruik van functie oppervlak(h,b)');
   
   // ############################################
   // functies als variabelen
@@ -61,10 +61,10 @@ function Initieer() {
 
 
   // variabele als functie
-  const FunctieAlsVariabele = function(iets){
+  const functieAlsVariabele = function(iets) {
     console.log(iets);
   } 
-  FunctieAlsVariabele("Functie als variabele werkt!");
+  functieAlsVariabele("Functie als variabele werkt!");
 
   // ############################################
   // arrow functions
@@ -73,8 +73,8 @@ function Initieer() {
   //met arugumenten ('a' ~ 2):
   const double = a => a * 2;
 
-  const Verdubbel = a => (a*2);
-  console.log(Verdubbel(8));
+  const verdubbel = a => (a *2);
+  console.log(verdubbel(8));
 
   //zonder argumenten:
   const ConsoleZin = () => {
@@ -86,34 +86,34 @@ function Initieer() {
 }
 
 // paramaterloze functie
-function DoeIets() {
+function doeIets() {
   console.info("Er is iets gebeurd!");
 }
 
 //functie met een parameter
-function DoeNogIets(zin) {
+function doeNogIets(zin) {
   console.info(zin);
 }
 
 //functie met meerdere parameters.
 //mbv. de arguments property wordt gecheckt of alle parameters meegegeven werden
-function Oppervlak(hoogte, breedte) {
+function oppervlak(hoogte, breedte) {
   if (arguments.length == 2) {
 
     if (!isNaN(hoogte) && !isNaN(breedte))
       console.log(`De oppervlakte is ${hoogte} * ${breedte} = ${hoogte * breedte}`);
 
     else
-      console.warn('Functie Oppervlak(h,b) werkt enkel met getallen');
+      console.warn('Functie oppervlak(h,b) werkt enkel met getallen');
 
   }
 
   else
-    console.warn("Functie Oppervlak(h,b) verkeerd gebruikt, er dienen 2 parameters te worden meegegeven met deze functie");
+    console.warn("Functie oppervlak(h,b) verkeerd gebruikt, er dienen 2 parameters te worden meegegeven met deze functie");
 
 }
 
-function Oppervlak2(hoogte, breedte) {
+function oppervlak2(hoogte, breedte) {
   let oppervlak = 0;
   let fout = true;
   if ((arguments.length != 2) || (isNaN(hoogte) || (isNaN(breedte)))) {
@@ -136,6 +136,3 @@ function Trippel(getal) {
   if (!isNaN(getal)) return 3 * getal;
   else return 'Foutief gebruik, getal ingeven!';
 }
-
-
-

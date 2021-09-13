@@ -77,11 +77,11 @@ function initialize() {
   console.log(verdubbel(8));
 
   //zonder argumenten:
-  const ConsoleZin = () => {
+  const consoleZin = () => {
     console.log('Een zin in de console'); 
     console.log('Een 2de zin');
   };
-  ConsoleZin();
+  consoleZin();
 
 }
 

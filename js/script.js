@@ -3,9 +3,9 @@
 window.addEventListener("load", initialize);
 
 //anonieme functie
-//window.addEventListener("load", function () { 
-//  alert("HTML ingeladen!"); 
-//});
+window.addEventListener("load", function () { 
+ alert("HTML ingeladen!"); 
+});
 
 function initialize() {
 
@@ -13,6 +13,7 @@ function initialize() {
 
   btnAnonymous.addEventListener("click", function () {
     alert("Ik ben helemaal geheim!");
+    logMessage("Anonieme functie getriggered!");
   });
 
   // ############################################

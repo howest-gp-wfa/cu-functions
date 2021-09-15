@@ -55,6 +55,11 @@ function initialize() {
     console.warn("Foutief gebruik van functie getSurface(height, width)");
 
   // ############################################
+  // functies uit een aparte bibliotheek (functions.js)
+  // ############################################
+  sayHello();
+
+  // ############################################
   // functies als variabelen
   // ############################################
 
